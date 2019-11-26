@@ -1,7 +1,7 @@
 # Mend.ng - Mobile  Roadside Assistance  Application
 
 ## Libraries
-* ReactJS
+* React Native
 * Reactstrap - For Styline
 * Ruby on Rails - Backend
 * Font Awesome - Icons
