@@ -15,3 +15,125 @@ Migrating to CreateMends (20191121030837)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5736801139284754560)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMend Load (2.9ms)[0m  [1m[34mSELECT "mends".* FROM "mends" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "mends"[0m
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-11-25 21:16:28 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.0ms | Allocations: 489)
+Completed 200 OK in 25ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 2698)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-11-25 21:16:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5736801139284754560)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (11.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5736801139284754560)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMend Create (15.7ms)[0m  [1m[32mINSERT INTO "mends" ("make", "model", "year", "description", "service", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["make", "Lincoln"], ["model", "Prius"], ["year", "2019"], ["description", "[\"Electronic parking brake\", \"Body color front/rear bumpers\", \"Roof mounted antenna\", \"Electrochromic pwr folding heated mirrors w/memory -inc: puddle lamps, integrated turn signals, auto reverse tilt-down\", \"Front/rear side curtain airbags\", \"Immobilizer system\"]"], ["service", "Platinum"], ["created_at", "2019-11-26 02:25:37.513250"], ["updated_at", "2019-11-26 02:25:37.513250"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMend Create (0.2ms)[0m  [1m[32mINSERT INTO "mends" ("make", "model", "year", "description", "service", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["make", "Buick"], ["model", "Challenger"], ["year", "2019"], ["description", "[\"Front side-impact airbags\", \"High performance suspension\", \"Full-length floor console\", \"Direct-type tire pressure monitor system\", \"Body color door handles\", \"625-amp maintenance-free battery\"]"], ["service", "Business"], ["created_at", "2019-11-26 02:25:37.533086"], ["updated_at", "2019-11-26 02:25:37.533086"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMend Create (0.2ms)[0m  [1m[32mINSERT INTO "mends" ("make", "model", "year", "description", "service", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["make", "Dodge"], ["model", "Corolla"], ["year", "2015"], ["description", "[\"Roof mounted antenna\", \"Air conditioning w/in-cabin microfilter\", \"200mm front axle\", \"Rear window defroster w/timer\", \"Dual chrome exhaust tips\"]"], ["service", "Gold"], ["created_at", "2019-11-26 02:25:37.535902"], ["updated_at", "2019-11-26 02:25:37.535902"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMend Create (0.9ms)[0m  [1m[32mINSERT INTO "mends" ("make", "model", "year", "description", "service", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["make", "Buick"], ["model", "LaCrosse"], ["year", "2016"], ["description", "[\"Cargo compartment lamp\", \"Electronic brakeforce distribution (EBD) w/brake assist (BA) -inc: Smart stop technology\", \"Black roof molding\", \"Impact-dissipating upper interior trim\", \"Steel side-door impact beams\", \"Vehicle info center\", \"Luxury front & rear floor mats w/logo\"]"], ["service", "Student"], ["created_at", "2019-11-26 02:25:37.543380"], ["updated_at", "2019-11-26 02:25:37.543380"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMend Create (0.2ms)[0m  [1m[32mINSERT INTO "mends" ("make", "model", "year", "description", "service", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["make", "Nissan"], ["model", "Cube"], ["year", "2017"], ["description", "[\"Rear passenger map pockets\", \"8-speed automatic transmission -inc: intelligence (ECT-i), gated shifter, sequential sport-shift mode\", \"160-amp alternator\", \"Acoustic glass windshield\", \"Tilt/telescoping steering column\"]"], ["service", "Platinum"], ["created_at", "2019-11-26 02:25:37.547578"], ["updated_at", "2019-11-26 02:25:37.547578"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMend Load (0.4ms)[0m  [1m[34mSELECT "mends".* FROM "mends" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-11-25 21:26:15 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.1ms | Allocations: 316)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 1603)
+
+
+Started GET "/" for ::1 at 2019-11-25 21:26:18 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.0ms | Allocations: 191)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started GET "/" for ::1 at 2019-11-25 21:26:47 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 8)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/mend" for ::1 at 2019-11-25 21:26:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/mend"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/mends" for ::1 at 2019-11-25 21:29:24 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MendsController#index as HTML
+  [1m[36mMend Load (0.7ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 30ms (Views: 21.4ms | ActiveRecord: 6.5ms | Allocations: 8012)
+
+
