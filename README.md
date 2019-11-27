@@ -6,6 +6,7 @@
 * Ruby on Rails - Backend
 * Font Awesome - Icons
 * Socket.io - JavaScript library for realtime web applications. (Chat)
+* COCOAPODS
 
 
 ## WireFrame
