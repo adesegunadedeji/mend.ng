@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 class Greeting extends Component {
-
-  state = {
-    isShowingText: true
+  constructor(){
+    super();
+    this.state = {
+      isShowingText: true
+    }
   }
+
+  
 
 
   // componentDidMount(){
