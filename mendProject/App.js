@@ -22,13 +22,13 @@ getMends = async()=>{
       credentials: "include"
     })
     const parsedResponse = await mechanic.json();
-    console.log("*******************************************",parsedResponse);
-    if(parsedResponse.code === 200){
+    console.log(`******************************************* 
+    PARSED RESPONSE
+    *******************************************`,
+    parsedResponse);
       this.setState({
           mechanic: parsedResponse,
       })
-      console.log("TWST")
-  }
   }
   catch(err){
     console.log(err)
@@ -38,11 +38,21 @@ getMends = async()=>{
 
 
   render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>This is{this.state.mechanic.make}</Text>
+   let mechanic = this.state.mechanic.map(mechanic =>{
+      console.log(mechanic.id)
+      return(
+      <View key= {mechanic.id}> 
+      <Text>{mechanic.make}</Text>
       </View>
-    );
+      )
+    })
+    return(
+ 
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                  {mechanic}
+           <Text>Mechanic Roster</Text>
+</View>
+    )
   }
 }
 
