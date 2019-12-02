@@ -33,6 +33,7 @@ getMends = async()=>{
   }
 }
   render() {
+    const { navigation } = this.props
    let mechanic = this.state.mechanic.map(mechanic =>{
       console.log(mechanic.id)
       return(
@@ -46,7 +47,22 @@ getMends = async()=>{
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
                   {mechanic}
            <Text>Mechanic Roster</Text>
-           <Button onPress = {()=> this.props.navigation.navigate('Home')} title = "Go to Home"></Button>
+           <Text>
+          itemId: {JSON.stringify(navigation.getParam('itemId', 'NO-ID'))}
+        </Text>
+        <Text>
+          otherParam:
+          {JSON.stringify(navigation.getParam('otherParam', 'default value'))}
+        </Text>
+           {/* <Button onPress = {()=> this.props.navigation.push('Test')} title = "Go to Test aagain .."></Button> */}
+           <Button
+          title="Go to Details... again"
+          onPress={() =>
+         navigation.push('Test', {
+              itemId: Math.floor(Math.random() * 100),
+            })
+          }
+        />
 </View>
     )
   }
@@ -57,7 +73,16 @@ class HomeScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>This is the Home Screen</Text>
-        <Button onPress = {()=> this.props.navigation.navigate('Test')} title = "Go to Test"></Button>
+        {/* <Button onPress = {()=> this.props.navigation.navigate('Test')} title = "Go to Test"></Button> */}
+        <Button
+          title="Go to Test"
+          onPress={() => {
+            this.props.navigation.navigate('Test', {
+              itemId: 86,
+              otherParam: 'anything you want here',
+            });
+          }}
+        />
       </View>
     );
   }
