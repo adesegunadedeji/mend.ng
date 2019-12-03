@@ -54,7 +54,7 @@ getMends = async()=>{
           otherParam:
           {JSON.stringify(navigation.getParam('otherParam', 'default value'))}
         </Text>
-           {/* <Button onPress = {()=> this.props.navigation.push('Test')} title = "Go to Test aagain .."></Button> */}
+           {/* <Buttgon onPress = {()=> this.props.navigation.push('Test')} title = "Go to Test aagain .."></Button> */}
            <Button
           title="Go to Details... again"
           onPress={() =>
