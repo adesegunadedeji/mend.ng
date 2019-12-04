@@ -4,12 +4,25 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 class MendContainer extends Component {
+ 
   constructor(){
     super();
     this.state = {
       mechanic: []
     }
   }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+      headerStyle:{
+        backgroundColor: '#243447',
+      },
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontFamily: 'Verdana-BoldItalic'
+      }
+    };
+  };
   componentDidMount(){
     console.log("Component did Mount");
     this.getMends();
@@ -63,12 +76,25 @@ getMends = async()=>{
             })
           }
         />
+            <Button
+      title="Update the title"
+      onPress={()=> this.props.navigation.setParams({otherParam:"updated!!"})}></Button>
 </View>
     )
   }
 }
 
 class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home',
+    headerStyle:{
+      backgroundColor: '#243447',
+    },
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontFamily: 'Verdana-BoldItalic'
+    }
+  };
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -83,6 +109,8 @@ class HomeScreen extends React.Component {
             });
           }}
         />
+        
+  
       </View>
     );
   }
