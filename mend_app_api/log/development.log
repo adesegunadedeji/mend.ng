@@ -1442,3 +1442,80 @@ Processing by MendsController#index as */*
 Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 1.4ms | Allocations: 1655)
 
 
+Started GET "/mends" for ::1 at 2019-12-04 19:46:55 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (3.3ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 3.3ms | Allocations: 1717)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 20:05:44 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (0.7ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.7ms | Allocations: 1717)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:00:12 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (6.3ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 6.3ms | Allocations: 1716)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:00:43 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (0.7ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.7ms | Allocations: 1655)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:05:08 -0500
+Started GET "/mends" for ::1 at 2019-12-04 21:05:08 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (0.3ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 1655)
+
+
+Processing by MendsController#index as */*
+  [1m[36mMend Load (2.2ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 2.2ms | Allocations: 1716)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:05:27 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (1.1ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 1.1ms | Allocations: 1655)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:06:10 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (0.3ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 1655)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:06:35 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (0.3ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1655)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:06:54 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (1.4ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 1.4ms | Allocations: 1655)
+
+
+Started GET "/mends" for ::1 at 2019-12-04 21:07:07 -0500
+Processing by MendsController#index as */*
+  [1m[36mMend Load (0.5ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.5ms | Allocations: 1655)
+
+

@@ -92,7 +92,7 @@ class HomeScreen extends React.Component {
     },
     headerTitleStyle: {
       fontWeight: 'bold',
-      fontFamily: 'Verdana-BoldItalic'
+      fontFamily: 'Mansalva-Regular'
     }
   };
   render() {
