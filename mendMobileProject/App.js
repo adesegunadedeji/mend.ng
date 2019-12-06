@@ -135,3 +135,90 @@ export default class App extends React.Component {
   }
 }
 
+
+
+
+
+
+
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, {Component} from 'react';
+import {View,Text,} from 'react-native';
+
+import {
+  LearnMoreLinks,
+  Colors,
+  DebugInstructions,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+
+import { Avatar,Header,ListItem  } from 'react-native-elements';
+
+class MendApp extends Component{
+  constructor(){
+    super();
+    this.state = {
+      mechanic: []
+    }
+  }
+
+  componentDidMount(){
+    console.log("Component did Mount");
+    this.getMends();
+}
+getMends = async()=>{
+  try{
+    const mechanic = await fetch(`http://localhost:3000/mends`,{
+      credentials: "include"
+    })
+    const parsedResponse = await mechanic.json();
+      this.setState({
+          mechanic: parsedResponse,
+      })
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+
+  render() {
+    let mechanic = this.state.mechanic.map(mechanic => 
+      {
+      return(
+        <ListItem key= {mechanic.id}
+         title={mechanic.make}
+         subtitle={mechanic.model}
+         bottomDivider
+         chevron/>
+      )
+    })
+    return(
+  <View style={{ justifyContent: "center", alignItems: "center" }}>
+ <Header
+  leftComponent={{ icon: 'menu', color: '#fff' }}
+  centerComponent={{ text: 'HOME', style: { color: '#fff' }, fontFamily: ""}}
+  rightComponent={{ icon: 'home', color: '#fff' }}
+/>
+{/* <Avatar
+  rounded
+  source={{
+    uri:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+  }}
+/> */}
+      <View>
+      {mechanic}
+      </View>
+      </View>
+    )
+    }
+}
+export default MendApp;
+
