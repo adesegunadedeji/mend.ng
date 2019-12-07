@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View,Text,} from 'react-native';
+import {View,Text, StyleSheet} from 'react-native';
 
 import {
   LearnMoreLinks,
@@ -8,9 +8,51 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Avatar,Header,ListItem, Card, Button, Icon } from 'react-native-elements';
+import { Avatar,Header,ListItem, Card, Button, Icon} from 'react-native-elements';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default class MendApp extends Component{
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  icon: {
+    paddingLeft: 10
+  },
+  iconContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    width: 120
+  }
+});
+
+class MendApp extends Component{
+  static navigationOptions = {
+    title: 'WELCOME',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+      icon: 'home'
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    headerLeft: (
+      <Icon
+        containerStyle={styles.icon}
+        type="ionicon"
+        name={Platform.OS === "ios" ? "ios-menu" : "md-menu"}
+      />
+    ),
+    headerRight: (
+      <View style={styles.iconContainer}>
+        <Icon type="ionicon" name={Platform.OS === "ios" ? "ios-search" : "md-search"} />
+        {/* <Icon type="ionicon" name={Platform.OS === "ios" ? "ios-heart" : "md-heart"} />
+        <Icon type="ionicon" name={Platform.OS === "ios" ? "ios-more" : "md-more"} /> */}
+      </View>
+    )
+  };
   constructor(){
     super();
     this.state = {
@@ -46,7 +88,7 @@ getMends = async()=>{
       {
     return(
       // <View key= {mechanic.id}>
-        <ListItem key= {mechanic.id}
+        <ListItem  key= {mechanic.id}
         title={mechanic.model}> </ListItem>
         // </View>
   
@@ -54,14 +96,42 @@ getMends = async()=>{
   })
   return(  
     <View>
-   <Header
-    leftComponent={{ icon: 'menu', color: '#fff' }}
-    centerComponent={{ text: 'HOME', style: { color: '#fff' }, fontFamily: ""}}
-    rightComponent={{ icon: 'home', color: '#fff' }}/>
        <View style={{ justifyContent: "center", alignItems: "center" }}>
+       <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
        {mechanic}
       </View>
       </View>
     ) 
 }
+}
+
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+      </View>
+    );
+  }
+}
+
+const RootStack = createStackNavigator(
+  {
+    Home: MendApp,
+    Details: DetailsScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
 }
