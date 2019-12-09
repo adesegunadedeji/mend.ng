@@ -84,20 +84,34 @@ getMends = async()=>{
 }
 
   render(){
+
     let mechanic = this.state.mechanic.map(mechanic => 
       {
+    //     return(   
+    //  <View key= {mechanic.id}> 
+    //  <Text>{mechanic.year}</Text>
+    //  </View>
+    // )   
     return(
-      // <View key= {mechanic.id}>
-        <ListItem  key= {mechanic.id}
-        title={mechanic.model}> </ListItem>
-        // </View>
-  
+      // implemented with Text and Button as children
+<Card title='HELLO WORLD'
+ key={mechanic.id} 
+ image={require("./images/Image1.jpg")}>
+  <Text style={{marginBottom: 10}}>{mechanic.model}</Text>
+  <Button
+    icon={<Icon name='code' color='#ffffff' />}
+    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+    title='VIEW NOW'
+    onPress={() => this.props.navigation.navigate('Details')} />
+</Card>
     )
   })
   return(  
     <View>
        <View style={{ justifyContent: "center", alignItems: "center" }}>
        <Button
+       icon={<Icon name='code' color='#ffffff' />}
+       buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
           title="Go to Details"
           onPress={() => this.props.navigation.navigate('Details')}
         />
