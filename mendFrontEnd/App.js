@@ -1,151 +1,20 @@
-import React, {Component} from 'react';
-import {View,Text, StyleSheet} from 'react-native';
+import React, {Component} from 'react'
+import Secured from './src/screens/Secured'
+import Login from './src/screens/Login'
 
-import {
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import { Avatar,Header,ListItem, Card, Button, Icon} from 'react-native-elements';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  icon: {
-    paddingLeft: 10
-  },
-  iconContainer: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    width: 120
-  }
-});
-
-class MendApp extends Component{
-  static navigationOptions = {
-    title: 'WELCOME',
-    headerStyle: {
-      backgroundColor: '#f4511e',
-      icon: 'home'
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-    headerLeft: (
-      <Icon
-        containerStyle={styles.icon}
-        type="ionicon"
-        name={Platform.OS === "ios" ? "ios-menu" : "md-menu"}
-      />
-    ),
-    headerRight: (
-      <View style={styles.iconContainer}>
-        <Icon type="ionicon" name={Platform.OS === "ios" ? "ios-search" : "md-search"} />
-        {/* <Icon type="ionicon" name={Platform.OS === "ios" ? "ios-heart" : "md-heart"} />
-        <Icon type="ionicon" name={Platform.OS === "ios" ? "ios-more" : "md-more"} /> */}
-      </View>
-    )
-  };
-  constructor(){
-    super();
-    this.state = {
-      mechanic: []
+export default class App extends Component{
+    state = {
+       isLoggedIn: false
     }
-  }
 
-  componentDidMount(){
-    console.log("Component did Mount");
-    this.getMends();
-}
-getMends = async()=>{
-  try{
-    const mechanic = await fetch(`http://localhost:3000/mends`,{
-      credentials: "include"
-    })
-    const parsedResponse = await mechanic.json();
-    console.log(`******************************************* 
-    PARSED RESPONSE
-    *******************************************`,
-    parsedResponse);
-      this.setState({
-          mechanic: parsedResponse,
-      })
-  }
-  catch(err){
-    console.log(err)
-  }
-}
-
-  render(){
-
-    let mechanic = this.state.mechanic.map(mechanic => 
-      {
-    //     return(   
-    //  <View key= {mechanic.id}> 
-    //  <Text>{mechanic.year}</Text>
-    //  </View>
-    // )   
-    return(
-      // implemented with Text and Button as children
-<Card title='HELLO WORLD'
- key={mechanic.id} 
- image={require("./images/Image1.jpg")}>
-  <Text style={{marginBottom: 10}}>{mechanic.model}</Text>
-  <Button
-    icon={<Icon name='code' color='#ffffff' />}
-    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-    title='VIEW NOW'
-    onPress={() => this.props.navigation.navigate('Details')} />
-</Card>
-    )
-  })
-  return(  
-    <View>
-       <View style={{ justifyContent: "center", alignItems: "center" }}>
-       <Button
-       icon={<Icon name='code' color='#ffffff' />}
-       buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-       {mechanic}
-      </View>
-      </View>
-    ) 
-}
-}
-
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-      </View>
-    );
-  }
-}
-
-const RootStack = createStackNavigator(
-  {
-    Home: MendApp,
-    Details: DetailsScreen,
-  },
-  {
-    initialRouteName: 'Home',
-  }
-);
-
-const AppContainer = createAppContainer(RootStack);
-
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+    render(){
+        if (this.state.isLoggedIn)
+        return(
+            <Secured  onLogoutPress = {()=> this.setState({isLoggedIn:false})}/>
+        )
+        else 
+        return (
+            <Login onLoginPress = {()=> this.setState({isLoggedIn:true})}/>
+        )
+    }
 }
