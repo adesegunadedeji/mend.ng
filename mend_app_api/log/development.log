@@ -2792,3 +2792,17 @@ Processing by MendsController#index as HTML
 Completed 200 OK in 39ms (Views: 15.8ms | ActiveRecord: 21.7ms | Allocations: 7746)
 
 
+Started GET "/" for ::1 at 2019-12-10 20:32:36 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.6ms | Allocations: 316)
+Completed 200 OK in 40ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 1558)
+
+
+Started GET "/mends" for ::1 at 2019-12-10 20:32:38 -0500
+Processing by MendsController#index as HTML
+  [1m[36mMend Load (8.1ms)[0m  [1m[34mSELECT "mends".* FROM "mends"[0m
+  ↳ app/controllers/mends_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 11.3ms | ActiveRecord: 8.1ms | Allocations: 1738)
+
+

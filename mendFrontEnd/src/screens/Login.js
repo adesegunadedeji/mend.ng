@@ -8,10 +8,13 @@ import {
 } from 'react-native';
 
 class Login extends Component{
-    state={
+    constructor(){
+        super();
+        state={
         username: null,
         password: null
     }
+}
 
     handleChange=(e)=>{
         setState({

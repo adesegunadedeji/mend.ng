@@ -17,5 +17,5 @@ export default class Secured extends Component{
                     <Button onPress={this.props.onLogoutPress} title="Logout"/>
                     </ScrollView>
                     )
-            }
+         }
 }
