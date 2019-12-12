@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Avatar, Header, Tile} from 'react-native-elements';
+import PasswordInputText from 'react-native-hide-show-password-input';
+
 import {
     ScrollView,
     Text,
@@ -15,23 +18,35 @@ class Login extends Component{
         password: null
     }
 }
-
     handleChange=(e)=>{
-        setState({
+        this.setState({
             [e.target.name]:e.target.value
          })
-         console.log(this.state)
     }
   render(){
       return(
-          <ScrollView style = {{padding:20}}>
-              <Text style={{fontSize: 27 }} >Login</Text>
-              <TextInput name="username" placeholder="Username" onChange={this.handleChange}></TextInput>
-              <TextInput placeholder="Password" type="password" onChange={this.handleChange}></TextInput>
-              <Button onPress={this.props.onLoginPress}title="Submit"/>
+          <View style ={{justifyContent:"center", flex: 1, alignItems:'center'}}>
+              <Header
+  leftComponent={{ icon: 'menu', color: '#fff' }}
+  centerComponent={{ text: 'LOGIN', style: { color: '#fff' } }}
+  rightComponent={{ icon: 'home', color: '#fff' }}
+/>
+          <ScrollView style = {{padding:80}} >
+          <Text style={{fontSize: 27}} >Login</Text>
+          <Avatar
+          Image size={60} 
+  rounded
+  source={{
+    uri:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+  }}/>
+
+            <TextInput name="username" type="text" widthcc placeholder="username" onChange={this.handleChange}></TextInput>
+            <PasswordInputText size={20} name="password" type="password" onChange={this.handleChange}></PasswordInputText>
+            <Button onPress={this.props.onLoginPress}title="Submit"/>
           </ScrollView>
+          </View>
       )
   }
 }
-
 export default  Login

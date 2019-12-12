@@ -2806,3 +2806,10 @@ Processing by MendsController#index as HTML
 Completed 200 OK in 20ms (Views: 11.3ms | ActiveRecord: 8.1ms | Allocations: 1738)
 
 
+Started GET "/" for ::1 at 2019-12-12 07:32:09 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adesegunadedeji/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 81.1ms | Allocations: 196)
+Completed 200 OK in 151ms (Views: 113.4ms | ActiveRecord: 0.0ms | Allocations: 735)
+
+

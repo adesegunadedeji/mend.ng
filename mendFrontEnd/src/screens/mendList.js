@@ -71,7 +71,7 @@ updateMendList= async()=>{
       method: "PUT",
       body: JSON.stringify(FormData),
       headers:{
-        "Content-Type": "applicatin/json"
+        "Content-Type": "application/json"
       }
     })
     const parsedResponse = await updateMend.json();
